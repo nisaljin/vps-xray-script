@@ -36,7 +36,7 @@ sudo reboot (To restart after the update)
 ```
 4)
 ```
-sudo git clone https://github.com/sbatrow/vps-xray-script
+sudo git clone https://github.com/nisaljin/vps-xray-script.git
 ```
 5)
 ```
