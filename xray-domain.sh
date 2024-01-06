@@ -21,78 +21,13 @@ bash -c "$(curl -L https://github.com/nisaljin/Xray-install/raw/main/install-rel
 #adding new configuration files 
 
 rm -rf /usr/local/etc/xray/config.json
-cat << EOF > /usr/local/etc/xray/config0.json
-{
-    "inbounds": [
-	{
-	"port": 80,
-	"protocol": "vmess",
-	"tag":"http",
-	"settings": {
-		"clients": [
-					{
-						"id": "$uuid",
-						"level": 1,
-						"alterId": 4,
-						"security": "auto"
-					}
-		]
-	},
-	"streamSettings": {
-		"network": "tcp",
-		"tcpSettings": {
-			"header": {
-				"type": "http",
-				"response": {
-					"version": "1.1",
-					"status": "200",
-					"reason": "OK",
-					"headers": {
-						"Content-encoding": [
-							"gzip"
-						],
-						"Content-Type": [
-							"text/html; charset=utf-8"
-						],
-						"Cache-Control": [
-							"no-cache"
-						],
-						"Vary": [
-							"Accept-Encoding"
-						],
-						"X-Frame-Options": [
-							"deny"
-						],
-						"X-XSS-Protection": [
-							"1; mode=block"
-						],
-						"X-content-type-options": [
-							"nosniff"
-						]
-					}
-				}
-			}
-		}
-	},
-	"sniffing": {
-		"enabled": true,
-		"destOverride": [
-			"http",
-			"tls"
-		]
-	}
-}
-]
-}
-EOF
 cat << EOF > /usr/local/etc/xray/config1.json
 {
     "inbounds": [
 	{
             "port": 443,
-            "listen": "0.0.0.0",
             "protocol": "vless",
-			      "tag":"XTLS",
+			"tag":"XTLS",
             "settings": {
                 "clients": [
                     {
