@@ -90,7 +90,7 @@ cat << EOF > /usr/local/etc/xray/config1.json
     "inbounds": [
 	{
             "port": 443,
-            "listen": "nisal.info",
+            "listen": "0.0.0.0",
             "protocol": "vless",
 			      "tag":"XTLS",
             "settings": {
